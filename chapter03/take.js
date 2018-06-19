@@ -1,5 +1,6 @@
 const { of } = require('rxjs');
 const { take } = require('rxjs/operators');
+
 //emit 1,2,3,4,5
 const source = of(1, 2, 3, 4, 5);
 //take the first emitted value then complete

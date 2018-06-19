@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://npmcdn.com/@reactivex/rxjs@5.0.0-beta.8/dist/global/Rx.umd.js"></script>
+</head>
+<body>
+    <div id="locationDisplay">
+        Where would you click first?
+    </div>
+    <script>
+        const oneClickEvent = Rx.Observable
+            .fromEvent(document, 'click')
+            .take(3)
+            .do(v => {
+                document.getElementById('locationDisplay').innerHTML
+                    = `Your first click was on location ${v.screenX}:${v.screenY}`;
+            });
+        const subscribe = oneClickEvent.subscribe();
+    </script>
+</body>
+</html>
