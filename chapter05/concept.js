@@ -4,4 +4,11 @@
     각각의 스트림은 새로 만들어(branch)져서 새로운 스트림이 될 수도 있고, 여러개의 스트림이 합쳐(merge) 질수 도 있다.
     스트림은 map, filter과 같은 함수형 메소드를 이용하여, immutable하게 처리할 수 있다.
     스트림을 listening 함으로써 데이터의 결과값을 얻는다. 이를 subscribe라고 표현한다.
+    time    1000    2000    3000    4000    5000
+    a       0       1
+    b       0       1       2       3       4      
+    time    1000   2000     2001    3000    3001    4000    4001    5000    5001
+    a       0      1        1       2       2       3       3       4       4 
+    b       0      0        1       1       2       2       3       3       4    
+    http: //reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-combineAll
 */
